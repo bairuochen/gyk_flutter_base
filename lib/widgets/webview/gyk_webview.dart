@@ -11,7 +11,10 @@ import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 /// gyk webview 组件
 class GYKWebviewPage extends StatefulWidget {
 
+  /// 加载url
   final String _url;
+
+  /// webview 加载完成title回调
   TitleCallBack? titleCallBack;
   JavaScriptChannels? javaScriptChannels;
   UrlIntercept? urlIntercept;
