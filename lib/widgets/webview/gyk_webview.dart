@@ -97,12 +97,24 @@ class _GYKWebviewState extends State<GYKWebviewPage> {
     initWebview();
   }
 
+  /// 退出APP
+  Future<bool> _exitApp(BuildContext context) async {
+    if (await _controller.canGoBack()) {
+      _controller.goBack();
+      return Future.value(false);
+    } else {
+      return Future.value(true);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: WebViewWidget(controller: _controller),
-        ));
+    return WillPopScope(
+        onWillPop: () => _exitApp(context),
+        child: SafeArea(
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              body: WebViewWidget(controller: _controller),
+            )));
   }
 }
