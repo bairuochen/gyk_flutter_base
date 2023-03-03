@@ -1,10 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 /// 系统相关工具类
 class GYKSystemUtil {
 
-  static TargetPlatform targetPlatform = defaultTargetPlatform;
-
+  /// 包信息
   static late PackageInfo packageInfo;
 }
