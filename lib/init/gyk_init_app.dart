@@ -6,13 +6,16 @@ import '../utils/gyk_system_util.dart';
 /// gyk 初始化入口
 class GYKInitApp {
 
-  static Future<PackageInfo> getPackageInfo() async {
-    return await PackageInfo.fromPlatform();
-  }
-
+  /// 初始化
   static Future<void> init() async {
     WidgetsFlutterBinding.ensureInitialized();
     var package = await getPackageInfo();
+    /// 初始化包信息
     GYKSystemUtil.packageInfo = package;
+  }
+
+  /// 获取包信息
+  static Future<PackageInfo> getPackageInfo() async {
+    return await PackageInfo.fromPlatform();
   }
 }
