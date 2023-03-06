@@ -5,7 +5,7 @@ import 'package:flutter_app_update/update_model.dart';
 class GYKAppUpgrade {
 
   /// 升级
-  static Future<void> appUpgrade(UpdateModel updateModel) {
+  static Future<bool> appUpgrade(UpdateModel updateModel) {
     return AzhonAppUpdate.update(updateModel);
   }
 

@@ -1,3 +1,5 @@
+import 'download_status.dart';
+
 class AppInfo {
   /// 版本名称
   String versionName;
@@ -35,3 +37,9 @@ class AppUpgradeInfo {
         this.force = false
     });
 }
+
+/// 下载进度回调
+typedef DownloadProgressCallback = Function(int count, int total);
+
+/// 下载状态变化回调
+typedef DownloadStatusChangeCallback = Function(DownloadStatus downloadStatus, {dynamic error});
