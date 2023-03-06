@@ -28,6 +28,7 @@ class GYKAppInfo {
     required this.apkVersionCode,
     required this.content,
     required this.forceUpgrade,
-    required this.iosUrl
+    required this.iosUrl,
+    this.packageName
 });
 }
