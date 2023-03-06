@@ -19,6 +19,9 @@ class GYKAppInfo {
   /// ios 更新地址（APP Store）
   String iosUrl;
 
+  /// 包名
+  String? packageName;
+
   GYKAppInfo({
     required this.downloadUrl,
     required this.apkVersionName,
