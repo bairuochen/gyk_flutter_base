@@ -16,7 +16,6 @@ class GYKUpgradeUtil {
         apkVersionCode: gykAppInfo.apkVersionCode,
         apkVersionName: "V${gykAppInfo.apkVersionName}",
         iOSUrl: gykAppInfo.iosUrl,
-        showiOSDialog: true,
         forcedUpgrade: gykAppInfo.forceUpgrade
     );
     return AzhonAppUpdate.update(updateModel);

@@ -17,7 +17,7 @@ class GYKAppInfo {
   bool forceUpgrade;
 
   /// ios 更新地址（APP Store）
-  String iosUrl;
+  String? iosUrl;
 
   /// 包名
   String? packageName;
@@ -28,7 +28,7 @@ class GYKAppInfo {
     required this.apkVersionCode,
     required this.content,
     required this.forceUpgrade,
-    required this.iosUrl,
+    this.iosUrl,
     this.packageName
 });
 }
