@@ -23,7 +23,11 @@ class GYKUpgradeUtil {
   }
 
   static String convertToContent(List<String> content) {
-    return '1.支持Android4.1及以上版本\n2.支持自定义下载过程\n3.支持通知栏进度条展示\n4.支持文字国际化\n5.使用Kotlin协程重构';
+    if(content.isEmpty) {
+      return '1、修复已知问题';
+    } else {
+      return content.join('\n');
+    }
   }
 
 }
