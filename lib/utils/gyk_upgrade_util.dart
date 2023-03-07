@@ -5,6 +5,7 @@ import 'package:flutter_app_update/azhon_app_update.dart';
 import 'package:flutter_app_update/update_model.dart';
 import 'package:gyk_flutter_base/init/gyk_init_app.dart';
 import 'package:gyk_flutter_base/models/app/gyk_app_info.dart';
+import 'package:gyk_flutter_base/utils/gyk_log_util.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 /// GYK 升级工具类
@@ -44,7 +45,7 @@ class GYKUpgradeUtil {
           forcedUpgrade: gykAppInfo.forceUpgrade
       );
     } else {
-      debugPrint("不支持更新");
+      GYKLogUtil.logWarning("不支持更新");
       return;
     }
     AzhonAppUpdate.update(updateModel);

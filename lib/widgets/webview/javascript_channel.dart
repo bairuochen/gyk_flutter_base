@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:gyk_flutter_base/utils/gyk_log_util.dart';
 import 'package:gyk_flutter_base/widgets/webview/callback/webview_callback.dart';
 import 'package:gyk_flutter_base/widgets/webview/gyk_webview_controller.dart';
-import 'package:webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_platform_interface/src/platform_webview_controller.dart';
 
 abstract class JavaScriptChannels {
 
@@ -13,10 +15,10 @@ abstract class JavaScriptChannels {
 
   /// log日志
   void logFunctionName(String functionName, String data) {
-    debugPrint("JS functionName -> $functionName JS params -> $data");
+    GYKLogUtil.logInfo("JS functionName -> $functionName JS params -> $data");
   }
 
-  Set<JavascriptChannel>? baseJavaScriptChannels(BuildContext context) {
+  Set<JavaScriptChannelParams>? baseJavaScriptChannels(BuildContext context) {
     var javascriptChannels = { _alertJavascriptChannel(context) };
     var other = otherJavascriptChannels(context);
     if (other != null) {
@@ -25,12 +27,12 @@ abstract class JavaScriptChannels {
     return javascriptChannels;
   }
 
-  JavascriptChannel _alertJavascriptChannel(BuildContext context) {
+  JavaScriptChannelParams _alertJavascriptChannel(BuildContext context) {
     var jName = "Toast";
-    return JavascriptChannel(name: jName, onMessageReceived: (JavascriptMessage message) {
+    return JavaScriptChannelParams(name: jName, onMessageReceived: (JavaScriptMessage message) {
       logFunctionName(jName, message.message);
     });
   }
 
-  Set<JavascriptChannel>? otherJavascriptChannels(BuildContext context);
+  Set<JavaScriptChannelParams>? otherJavascriptChannels(BuildContext context);
 }
