@@ -7,11 +7,17 @@ class GYKAppInfo {
   /// 更新内容
   List<String> content;
 
-  /// app 版本号
-  String apkVersionName;
+  /// 安卓app 版本号
+  String? androidApkVersionName;
 
-  /// app 版本编译号
-  int apkVersionCode;
+  /// 安卓app 版本编译号
+  int? androidApkVersionCode;
+
+  /// ios app 版本号
+  String? iosApkVersionName;
+
+  /// ios app 版本编译号
+  int? iosApkVersionCode;
 
   /// 是否强制更新
   bool forceUpgrade;
@@ -24,8 +30,10 @@ class GYKAppInfo {
 
   GYKAppInfo({
     required this.downloadUrl,
-    required this.apkVersionName,
-    required this.apkVersionCode,
+    this.androidApkVersionName,
+    this.androidApkVersionCode,
+    this.iosApkVersionName,
+    this.iosApkVersionCode,
     required this.content,
     required this.forceUpgrade,
     this.iosUrl,
