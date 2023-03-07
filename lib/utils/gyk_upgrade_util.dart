@@ -55,7 +55,7 @@ class GYKUpgradeUtil {
     if(content.isEmpty) {
       return '1、修复已知问题';
     } else {
-      return content.join('');
+      return content.join('\n');
     }
   }
 
