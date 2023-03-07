@@ -38,10 +38,9 @@ dependencies:
   # 获取包信息
   package_info_plus: ^3.0.3
   path_provider: ^2.0.13
-  install_plugin_v2:
-
   # webview
   webview_flutter: ^4.0.6
+  logger: ^1.2.2
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2

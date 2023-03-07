@@ -136,14 +136,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.2"
-  install_plugin_v2:
-    dependency: "direct main"
-    description:
-      name: install_plugin_v2
-      sha256: d6b014637e7a53839e9c5a254f9fd9bb8866392c6db1f16184ce17818cc2d979
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.0"
   js:
     dependency: transitive
     description:
@@ -160,6 +152,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.1"
+  logger:
+    dependency: "direct main"
+    description:
+      name: logger
+      sha256: c40f9ef51e5bffb4ce69ad2d8c8aad7bd47ec109c090521109b63a4e2bc27191
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.2.2"
   matcher:
     dependency: transitive
     description:
