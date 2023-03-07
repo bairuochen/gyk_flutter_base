@@ -25,16 +25,12 @@ class GYKUpgradeUtil {
           convertToContent(gykAppInfo.content),
           showNewerToast: false,
           apkVersionCode: gykAppInfo.iosApkVersionCode,
-          apkVersionName: "V${gykAppInfo.iosApkVersionName}",
+          apkVersionName: gykAppInfo.iosApkVersionName,
           iOSUrl: gykAppInfo.iosUrl,
           showiOSDialog: true,
           forcedUpgrade: gykAppInfo.forceUpgrade
       );
     } else if(defaultTargetPlatform == TargetPlatform.android && Platform.isAndroid) {
-      var needUpgrade = await checkAndroidUpdateState(gykAppInfo);
-      if (!needUpgrade) {
-        return;
-      }
       updateModel = UpdateModel(
           gykAppInfo.downloadUrl,
           "${gykAppInfo.packageName}.apk",
@@ -42,7 +38,7 @@ class GYKUpgradeUtil {
           convertToContent(gykAppInfo.content),
           showNewerToast: true,
           apkVersionCode: gykAppInfo.androidApkVersionCode,
-          apkVersionName: "V${gykAppInfo.androidApkVersionName}",
+          apkVersionName: gykAppInfo.androidApkVersionName,
           iOSUrl: gykAppInfo.iosUrl,
           showiOSDialog: true,
           forcedUpgrade: gykAppInfo.forceUpgrade
