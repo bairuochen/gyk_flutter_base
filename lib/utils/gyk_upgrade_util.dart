@@ -36,7 +36,7 @@ class GYKUpgradeUtil {
           "${gykAppInfo.packageName}.apk",
           'ic_launcher',
           convertToContent(gykAppInfo.content),
-          showNewerToast: true,
+          showNewerToast: false,
           apkVersionCode: gykAppInfo.androidApkVersionCode,
           apkVersionName: gykAppInfo.androidApkVersionName,
           iOSUrl: gykAppInfo.iosUrl,
@@ -67,22 +67,6 @@ class GYKUpgradeUtil {
         packageName: currentPackage.packageName,
         version: gykAppInfo.iosApkVersionName??'1.0.0',
         buildNumber: gykAppInfo.iosApkVersionCode != null ? gykAppInfo.iosApkVersionCode.toString(): '0'
-    );
-    /// 如果有新版本
-    if (compareVersion(currentPackage, newPackage) < 0) {
-      return true;
-    }
-    return false;
-  }
-
-  /// android 判断是否需要更新
-  static Future<bool> checkAndroidUpdateState(GYKAppInfo gykAppInfo) async {
-    var currentPackage = await GYKInitApp.getPackageInfo();
-    var newPackage = PackageInfo(
-        appName: currentPackage.appName,
-        packageName: currentPackage.packageName,
-        version: gykAppInfo.androidApkVersionName??'1.0.0',
-        buildNumber: gykAppInfo.androidApkVersionCode != null ? gykAppInfo.androidApkVersionCode.toString(): '0'
     );
     /// 如果有新版本
     if (compareVersion(currentPackage, newPackage) < 0) {
