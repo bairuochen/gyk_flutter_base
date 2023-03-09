@@ -98,9 +98,9 @@ class _GYKWebviewState extends State<GYKWebviewPage> {
 
     _controller = controller;
     _gykWebviewController = GYKWebviewController(_controller);
-    widget.onGYKWebPageCreated?.call(_gykWebviewController!);
     widget.urlIntercept?.controller = _gykWebviewController;
     widget.javaScriptChannels?.gykWebviewController = _gykWebviewController;
+    widget.onGYKWebPageCreated?.call(_gykWebviewController!);
   }
 
   @override
